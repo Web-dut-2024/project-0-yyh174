@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav-links">
+        <a href="imagesearch.html">图像搜索</a>
+        <a href="advancedsearch.html">高级搜索</a>
+    </div>
+    <script>
+        function searchGoogle() {
+            let query = document.getElementById('search-box').value;
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        }
+
+        function luckySearch() {
+            let query = document.getElementById('search-box').value;
+            window.location.href = `https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=${encodeURIComponent(query)}`;
+        }
+    </script>
+    <div style="display:flex;justify-content:center;align-items:center;">
+        <img src="Google.jpg" alt="图片" />
+    </div>
+    <div class="search-container">
+        <input type="text" id="search-box" placeholder="Search Google or type URL">
+        <button onclick="searchGoogle()">Google Search</button>
+        <button onclick="luckySearch()">I'm Feeling Lucky</button>
+    </div>
+
+
+
+</body>
+</html>

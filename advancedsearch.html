@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav-links">
+        <a href="index.html">谷歌搜索</a>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Find pages with...all these words:" id="all-words">
+        <input type="text" placeholder="Find pages with...this exact word or phrase:" id="exact-phrase">
+        <input type="text" placeholder="Find pages with...any of these words:" id="any-words">
+        <input type="text" placeholder="Find pages with...none of these words:" id="none-words">
+        <button onclick="advancedSearch()">高级搜索</button>
+    </div>
+    <script>
+
+        function advancedSearch() {
+            let query = `allintitle:${document.getElementById('all-words').value} `
+                + `exact:"${document.getElementById('exact-phrase').value}" `
+                + `${document.getElementById('any-words').value} `
+                + `-${document.getElementById('none-words').value}`;
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        }
+    </script>
+</body>
+</html>

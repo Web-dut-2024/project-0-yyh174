@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Images</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav-links">
+        <a href="index.html">谷歌搜索</a>
+    </div>
+    <div class="search-container">
+        <input type="text" id="search-box" placeholder="Search images and photos">
+        <button onclick="searchImages()">搜索</button>
+    </div>
+
+
+    <script>
+
+        function searchImages() {
+            let query = document.getElementById('search-box').value;
+            window.location.href = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(query)}`;
+        }
+    </script>
+</body>
+</html>
